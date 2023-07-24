@@ -86,3 +86,25 @@ bash train_scripts/vit/imagenet_a(r, c)/eval_mp.sh
 | Full Finetuning (FT)   |  83.58 |  86.57  | [log](./results/vit/imagenet/full-finetune.csv)    |   [params](https://drive.google.com/file/d/1VrR-s8ztfFMZn8_0ruL-BFl-WOBFWqg_/view?usp=sharing)            |
 | Moment Probing (MP)   |  83.15 |    3.65 |  [log](./results/vit/imagenet/mp.csv)   |   [params](https://drive.google.com/file/d/1xEVfOp9F22p51PlbYACM3pKeizb0dizx/view?usp=sharing)            |
 | Moment Probing+ (MP+)   | 83.62 |  4.10   | [log](./results/vit/imagenet/mp+.csv)    | [params](https://drive.google.com/file/d/1LybaEmdXqg6niz5hLg14Xn1qrZWFFbBA/view?usp=share_link)|
+
+## Citation
+
+```
+@inproceedings{gao2023iccv,
+  title={Tuning Pre-trained Model via Moment Probing},
+  author={Mingze Gao and Qilong Wang and Zhenyi Lin and Pengfei Zhu and Qinghua Hu and Jingbo Zhou},
+  booktitle = {ICCV},
+  year={2023}
+}
+```
+
+# Acknowledgement
+
+Our code are built following 
+[DeiT](https://github.com/facebookresearch/deit),
+[Swin Transformer](https://github.com/microsoft/Swin-Transformer),
+[ConvNeXt](https://github.com/facebookresearch/ConvNeXt),
+[CLIP](https://github.com/openai/CLIP),
+[SSF](https://github.com/dongzelian/SSF)
+, thanks for their excellent work
+
