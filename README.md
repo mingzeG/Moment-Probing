@@ -86,6 +86,3 @@ bash train_scripts/vit/imagenet_a(r, c)/eval_mp.sh
 | Full Finetuning (FT)   |  83.58 |  86.57  | [log](./results/vit/imagenet/full-finetune.csv)    |   [params](https://drive.google.com/file/d/1VrR-s8ztfFMZn8_0ruL-BFl-WOBFWqg_/view?usp=sharing)            |
 | Moment Probing (MP)   |  83.15 |    3.65 |  [log](./results/vit/imagenet/mp.csv)   |   [params](https://drive.google.com/file/d/1xEVfOp9F22p51PlbYACM3pKeizb0dizx/view?usp=sharing)            |
 | Moment Probing+ (MP+)   | 83.62 |  4.10   | [log](./results/vit/imagenet/mp+.csv)    | [params](https://drive.google.com/file/d/1LybaEmdXqg6niz5hLg14Xn1qrZWFFbBA/view?usp=share_link)|
-
-
-# Moment-Probing
