@@ -1,0 +1,15 @@
+The results of MP and MP+ on FGVC datasets (three runs on different random seeds)
+
+MP,CIFAR-100,CUB-200-2011,NABirds,Oxford Flowers,Stanford Dogs,Stanford Cars
+run1,93.77,89.18,84.78,99.64,89.54,83.72
+run2,93.86,89.30,84.93,99.60,89.56,83.51
+run3,93.82,89.39,84.85,99.60,89.47,83.64
+mean,93.8,89.3,84.9,99.6,89.5,83.6
+var,0.0014,0.0074,0.0038,0.0004,0.0015,0.0075
+
+MP+,CIFAR-100,CUB-200-2011,NABirds,Oxford Flowers,Stanford Dogs,Stanford Cars
+run1,94.24,89.93,86.14,99.69,90.26,89.40
+run2,94.16,89.85,86.07,99.69,90.17,89.38
+run3,94.27,89.88,86.12,99.68,90.24,89.34
+mean,94.2,89.9,86.1,99.7,90.2,89.4
+var,0.0022,0.0011,0.0009,2.2e-05,0.0015,0.0006
