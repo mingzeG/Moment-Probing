@@ -1,6 +1,6 @@
 # Tuning Pre-trained Model via Moment Probing
 
-This repo is the official implementation of ICCV 2023 paper "Tuning Pre-trained Model via Moment Probing", created by  Mingze Gao, Qilong Wang and Zhenyi Lin.
+This repo is the official implementation of ICCV 2023 paper "[Tuning Pre-trained Model via Moment Probing](https://arxiv.org/abs/2307.11342)", created by  [Mingze Gao](gaomingze@tju.edu.cn), [Qilong Wang](qlwang@tju.edu.cn) and [Zhenyi Lin](linzhenyi@tju.edu.cn).
 
 ## Introduction
 
