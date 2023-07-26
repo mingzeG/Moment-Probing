@@ -1,4 +1,4 @@
-CUDA_VISIBLE_DEVICES=0,1,2,3  python  -m torch.distributed.launch --nproc_per_node=8  --master_port=33518 \
+CUDA_VISIBLE_DEVICES=1,2,3,4  python  -m torch.distributed.launch --nproc_per_node=4  --master_port=33518 \
 	train.py /path/to/ILSVRC2012/images  --dataset imagenet --num-classes 5089 --model vit_base_patch16_224_in21k \
     --batch-size 64 --epochs 30 \
 	--opt adamw --weight-decay 0.05 \

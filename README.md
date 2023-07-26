@@ -87,6 +87,12 @@ bash train_scripts/vit/imagenet_a(r, c)/eval_mp.sh
 | Moment Probing (MP)   |  83.15 |    3.65 |  [log](./results/vit/imagenet/mp.csv)   |   [params](https://drive.google.com/file/d/1xEVfOp9F22p51PlbYACM3pKeizb0dizx/view?usp=sharing)            |
 | Moment Probing+ (MP+)   | 83.62 |  4.10   | [log](./results/vit/imagenet/mp+.csv)    | [params](https://drive.google.com/file/d/1LybaEmdXqg6niz5hLg14Xn1qrZWFFbBA/view?usp=share_link)|
 
+## TODO 
+
+- [x] Release training codes and related checkpoints of ViT on ImageNet.
+- [ ] Release other model training codes and checkpoints.
+- [ ] Release the code on other datasets (e.g. FGVC, Inat2017).
+
 ## Citation
 
 ```
