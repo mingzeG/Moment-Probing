@@ -212,12 +212,13 @@ class Transformer(nn.Module):
 
 
 class VisionTransformer(nn.Module):
-    def __init__(self, input_resolution: int, patch_size: int, width: int, layers: int, heads: int, output_dim: int, probing_mode='mp', tuning_mode=None):
+    def __init__(self, input_resolution: int, patch_size: int, width: int, layers: int, heads: int, output_dim: int, probing_mode='mp', tuning_mode=None, num_classes=1000):
         super().__init__()
         self.input_resolution = input_resolution
         self.output_dim = output_dim
         self.probing_mode = probing_mode
         self.tuning_mode = tuning_mode
+        self.num_classes = num_classes
         
         self.conv1 = nn.Conv2d(in_channels=3, out_channels=width, kernel_size=patch_size, stride=patch_size, bias=False)
 
@@ -233,7 +234,7 @@ class VisionTransformer(nn.Module):
         
         
         if probing_mode == 'mp':
-            self.head = Moment_Probing_ViT(in_dim=width)
+            self.head = Moment_Probing_ViT(in_dim=width, num_classes=num_classes)
         else: 
             self.head = nn.Linear(width, 1000)
 
@@ -270,6 +271,7 @@ class CLIP(nn.Module):
                  vision_patch_size: int,
                  probing_mode='mp', 
                  tuning_mode=None,
+                 num_classes=1000,
                  ):
         super().__init__()
 
@@ -294,6 +296,7 @@ class CLIP(nn.Module):
                 output_dim=embed_dim,
                 probing_mode=probing_mode, 
                 tuning_mode=tuning_mode,
+                num_classes=num_classes,
             )
 
         self.initialize_parameters()
@@ -340,12 +343,6 @@ def convert_weights(model: nn.Module):
                 if tensor is not None:
                     tensor.data = tensor.data.half()
 
-        # for name in ["text_projection", "proj"]:
-        #     if hasattr(l, name):
-        #         attr = getattr(l, name)
-        #         if attr is not None:
-        #             attr.data = attr.data.half()
-
     model.apply(_convert_weights_to_fp16)
 
 @register_model
@@ -369,10 +366,3 @@ def clip_vit_base_patch16(pretrained=True, check_path='/root/paddlejob/workspace
         model.load_state_dict(state_dict, strict=False)
     
     return model
-    
-if __name__ == '__main__':
-    # load model
-    x = torch.randn((2,3,224,224))
-    model = clip_vit_base_patch16()
-    y = model(x)
-    print(y.shape)

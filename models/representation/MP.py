@@ -324,11 +324,3 @@ class Moment_Probing_MLP(nn.Module):
         cross_cov = self.classifier2(cross_cov)
 
         return (cls_token + cross_cov)/2
-
-if __name__ == '__main__':
-    # load model
-    cls_token = torch.randn((2,768))
-    x = torch.randn((2,197,768))
-    model = Moment_Probing_ViT(in_dim=768,)
-    y = model(cls_token, x)
-    print(y.shape)

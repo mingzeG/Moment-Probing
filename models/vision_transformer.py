@@ -479,7 +479,7 @@ class VisionTransformer(nn.Module):
         if self.probing_mode == 'cls_token' or self.probing_mode == 'gap':
             self.head = nn.Linear(self.embed_dim, num_classes) if num_classes > 0 else nn.Identity()
         elif self.probing_mode == 'mp':
-            self.head = Moment_Probing_ViT(in_dim=self.embed_dim)
+            self.head = Moment_Probing_ViT(in_dim=self.embed_dim, num_classes=num_classes)
             
         if weight_init != 'skip':
             self.init_weights(weight_init)

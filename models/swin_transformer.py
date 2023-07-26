@@ -588,7 +588,7 @@ class SwinTransformer(nn.Module):
         self.avgpool = nn.AdaptiveAvgPool1d(1)
         
         if probing_mode=='mp':
-            self.head = Moment_Probing_ViT(in_dim=1024)
+            self.head = Moment_Probing_ViT(in_dim=1024, num_classes=num_classes)
         else: 
             self.head = nn.Linear(self.num_features, num_classes) if num_classes > 0 else nn.Identity()
             

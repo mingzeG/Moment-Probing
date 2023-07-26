@@ -342,7 +342,7 @@ class ConvNeXt(nn.Module):
             self.norm_pre = nn.Identity()
 
             if probing_mode=='mp':
-                self.head = Moment_Probing_CNN(in_dim=self.num_features,)
+                self.head = Moment_Probing_CNN(in_dim=self.num_features, num_classes=num_classes)
             else: 
                 self.head = nn.Sequential(OrderedDict([
                     ('global_pool', SelectAdaptivePool2d(pool_type=global_pool)),
